@@ -1,5 +1,8 @@
-const express = require('express'); // 1. Importation d'Express [cite: 55]
-const app = express(); // 2. Initialisation de l'application (C'est cette ligne qui manquait !) [cite: 56]
+const express = require('express');
+const cors = require('cors');
+
+const app = express(); // On crée "app" d'abord
+app.use(cors());       // On utilise "cors" ensuite
 const productsRoutes = require('./routes/products'); // Importation de vos routes [cite: 100]
 
 app.use(express.json()); // 3. Middleware pour lire le JSON [cite: 57]
